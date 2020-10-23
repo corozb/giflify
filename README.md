@@ -5,5 +5,5 @@ In this app you can find **gifs** whatever topic you want. It was built using [G
 I use:
 
 - React Hooks
-- Wouter instead React Router because is lighter
+- Wouter instead React Router because is lighter <br>
   `npm i wouter`

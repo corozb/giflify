@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 import getData from '../services/getData'
-import Gif from './Gif/Gif'
+import ListOfGifs from '../components/ListOfGifs/ListOfGifs'
 
-const ListOfGif = ({ params }) => {
+const SearchResults = ({ params }) => {
   const { keyword } = params
   const [gifs, setGifs] = useState([])
   const [loading, setLoading] = useState(true)
@@ -19,15 +19,7 @@ const ListOfGif = ({ params }) => {
     fetchData()
   }, [keyword])
 
-  return loading ? (
-    <h3>...Cargando</h3>
-  ) : (
-    <h3>
-      {gifs.map(({ id, title, url }) => (
-        <Gif id={id} key={id} title={title} url={url} />
-      ))}
-    </h3>
-  )
+  return loading ? <h3>...Cargando</h3> : <ListOfGifs gifs={gifs} />
 }
 
-export default ListOfGif
+export default SearchResults
