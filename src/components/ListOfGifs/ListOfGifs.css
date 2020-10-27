@@ -1,8 +1,8 @@
 .gif__list {
   -webkit-column-count: 4;
           column-count: 4;
-  -webkit-column-gap: 1em;
-          column-gap: 1em;
+  -webkit-column-gap: 0.6rem;
+          column-gap: 0.6rem;
   padding: 0 3rem;
 }
 

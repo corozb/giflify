@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Link } from 'wouter'
 import './App.css'
 
-import Home from './pages/Home/Home'
+import Home from './pages/Home'
 import SearchResults from './pages/SearchResults'
 import Detail from './pages/Detail'
 import logo from './components/assets/giflify.png'

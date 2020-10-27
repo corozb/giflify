@@ -8,14 +8,13 @@ const SearchResults = ({ params }) => {
   const [gifs, setGifs] = useState([])
   const [loading, setLoading] = useState(true)
 
-  async function fetchData() {
-    const data = await getData(keyword)
-    setGifs(data)
-    setLoading(false)
-  }
-
   useEffect(() => {
     setLoading(true)
+    async function fetchData() {
+      const data = await getData(keyword)
+      setGifs(data)
+      setLoading(false)
+    }
     fetchData()
   }, [keyword])
 
