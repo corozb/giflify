@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import getData from '../services/getData'
 import ListOfGifs from '../components/ListOfGifs/ListOfGifs'
+import Spinner from '../components/Spinner/Spinner'
 
 const SearchResults = ({ params }) => {
   const { keyword } = params
@@ -18,7 +19,7 @@ const SearchResults = ({ params }) => {
     fetchData()
   }, [keyword])
 
-  return loading ? <h3>...Cargando</h3> : <ListOfGifs gifs={gifs} />
+  return loading ? <Spinner /> : <ListOfGifs gifs={gifs} />
 }
 
 export default SearchResults
