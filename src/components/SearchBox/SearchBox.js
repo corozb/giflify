@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 
+import useGif from '../../hooks/useGif'
+// import getData from '../../services/getData'
+import ListOfGifs from '../ListOfGifs/ListOfGifs'
 import './SearchBox.css'
 
 const SearchBox = ({ pushLocation }) => {
   const [keyword, setKeyword] = useState('')
+  const { gifs, loading } = useGif()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(keyword)
     pushLocation(`/search/${keyword}`)
   }
 
@@ -16,15 +19,19 @@ const SearchBox = ({ pushLocation }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type='text'
-        value={keyword}
-        onChange={handleChange}
-        placeholder='Search all the GIFs and Stickers'
-        autoFocus
-      />
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type='text'
+          value={keyword}
+          onChange={handleChange}
+          placeholder='Search all the GIFs and Stickers'
+          autoFocus
+        />
+      </form>
+      <h3 className='Home__title'>Last Search</h3>
+      <ListOfGifs gifs={gifs} />
+    </>
   )
 }
 

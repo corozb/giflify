@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Detail = () => {
+const Detail = ({ params }) => {
+  const { id } = params
+  console.log(id)
   return (
     <div>
-      <h1>id</h1>
+      <h1>id: {id}</h1>
     </div>
   )
 }
