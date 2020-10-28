@@ -1,0 +1,29 @@
+.gif__list {
+  -webkit-column-count: 4;
+          column-count: 4;
+  -webkit-column-gap: 0.6rem;
+          column-gap: 0.6rem;
+  padding: 0 3rem;
+}
+
+@media (max-width: 1200px) {
+  .gif__list {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .gif__list {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .gif__list {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+/*# sourceMappingURL=ListOfGifs.css.map */
