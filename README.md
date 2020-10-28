@@ -8,3 +8,5 @@ I use:
 - Wouter instead React Router because is lighter <br>
   `npm i wouter`
   this library uses useLocation instead useHistory but basically have the same functionality
+- Service Layer `getData`
+- Create a custom hook `useGif`

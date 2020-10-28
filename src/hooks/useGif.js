@@ -1,16 +1,23 @@
 import { useState, useEffect } from 'react'
 import getData from '../services/getData'
 
-const useGif = ({ keyword }) => {
+const useGif = ({ keyword } = { keyword: null }) => {
+  const [loading, setLoading] = useState(false)
   const [gifs, setGifs] = useState([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setLoading(true)
+
+    // get data from localStorage
+    const getKeyword =
+      keyword || localStorage.getItem('lastKeyword') || 'random'
+
     async function fetchData() {
-      const data = await getData(keyword)
+      const data = await getData(getKeyword)
       setGifs(data)
       setLoading(false)
+      // save in localStorage
+      localStorage.setItem('lastKeyword', keyword)
     }
     fetchData()
   }, [keyword])

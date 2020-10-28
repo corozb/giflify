@@ -6,7 +6,7 @@ import Spinner from '../components/Spinner/Spinner'
 
 const SearchResults = ({ params }) => {
   const { keyword } = params
-  const { gifs, loading } = useGif({ keyword })
+  const { loading, gifs } = useGif({ keyword })
 
   return <>{loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}</>
 }

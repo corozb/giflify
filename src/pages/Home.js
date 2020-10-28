@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'wouter'
+
 import SearchBox from '../components/SearchBox/SearchBox'
 
 const POPULAR_GIFS = ['Dogs', 'Panda', 'Monkey']

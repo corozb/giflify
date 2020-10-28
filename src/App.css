@@ -26,4 +26,13 @@
           align-items: center;
   font-size: calc(10px + 2vmin);
 }
+
+.App .Home__title {
+  color: #57075e;
+  margin-top: 0.6rem;
+}
+
+.App h1 {
+  color: white;
+}
 /*# sourceMappingURL=App.css.map */
