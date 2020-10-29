@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import useGif from '../../hooks/useGif'
-// import getData from '../../services/getData'
 import ListOfGifs from '../ListOfGifs/ListOfGifs'
 import './SearchBox.css'
 
