@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import getData from '../services/getData'
 
-const useGif = ({ keyword } = { keyword: null }) => {
+import ContextGif from '../context/ContextGif'
+
+const useGif = ({ keyword } = { keyword: '' }) => {
   const [loading, setLoading] = useState(false)
-  const [gifs, setGifs] = useState([])
+  const { gifs, setGifs } = useContext(ContextGif)
+  // const [gifs, setGifs] = useState([])
 
   useEffect(() => {
     setLoading(true)
@@ -20,7 +23,7 @@ const useGif = ({ keyword } = { keyword: null }) => {
       localStorage.setItem('lastKeyword', keyword)
     }
     fetchData()
-  }, [keyword])
+  }, [keyword, setGifs])
 
   return { gifs, loading }
 }
