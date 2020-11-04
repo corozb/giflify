@@ -6,7 +6,6 @@ import ContextGif from '../context/ContextGif'
 const useGif = ({ keyword } = { keyword: '' }) => {
   const [loading, setLoading] = useState(false)
   const { gifs, setGifs } = useContext(ContextGif)
-  // const [gifs, setGifs] = useState([])
 
   useEffect(() => {
     setLoading(true)
