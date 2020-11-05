@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Gif from '../Gif/Gif'
+import Gif from 'components/Gif/Gif'
 import './ListOfGifs.css'
 
 const ListOfGifs = ({ gifs }) => {
