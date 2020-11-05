@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link } from 'wouter'
 
+import useGif from '../hooks/useGif'
 import SearchBox from '../components/SearchBox/SearchBox'
 import ListOfGifs from '../components/ListOfGifs/ListOfGifs'
-import useGif from '../hooks/useGif'
-
-const POPULAR_GIFS = ['Dogs', 'Panda', 'Monkey']
+import TrendingSearch from '../components/TrendingSearch/TrendingSearch'
 
 const Home = () => {
   const { gifs } = useGif()
@@ -20,16 +18,7 @@ const Home = () => {
           <ListOfGifs gifs={gifs} />
         </div>
         <div className='App__category'>
-          <div className='App__results'>
-            <h3 className='Home__title'>Most Populars</h3>
-            <ul>
-              {POPULAR_GIFS.map((popular) => (
-                <li key={popular}>
-                  <Link to={`/search/${popular}`}>Gif of {popular}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <TrendingSearch />
         </div>
       </div>
     </>
