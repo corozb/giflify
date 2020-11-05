@@ -14,6 +14,9 @@
 }
 
 @media (max-width: 992px) {
+  .App__wrapper {
+    display: block;
+  }
   .gif__list {
     -webkit-column-count: 2;
             column-count: 2;

@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
+import { useLocation } from 'wouter'
 
-import useGif from '../../hooks/useGif'
-import ListOfGifs from '../ListOfGifs/ListOfGifs'
 import './SearchBox.css'
 
-const SearchBox = ({ pushLocation }) => {
+const SearchBox = () => {
+  const [_, pushLocation] = useLocation()
   const [keyword, setKeyword] = useState('')
-  const { gifs, loading } = useGif()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -28,8 +27,6 @@ const SearchBox = ({ pushLocation }) => {
           autoFocus
         />
       </form>
-      <h3 className='Home__title'>Last Search</h3>
-      <ListOfGifs gifs={gifs} />
     </>
   )
 }
