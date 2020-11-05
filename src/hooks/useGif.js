@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
-import getData from '../services/getData'
+import getData from 'services/getData'
 
-import ContextGif from '../context/ContextGif'
+import ContextGif from 'context/ContextGif'
 
 const useGif = ({ keyword } = { keyword: '' }) => {
   const [loading, setLoading] = useState(false)

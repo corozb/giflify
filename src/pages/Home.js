@@ -1,9 +1,9 @@
 import React from 'react'
 
-import useGif from '../hooks/useGif'
-import SearchBox from '../components/SearchBox/SearchBox'
-import ListOfGifs from '../components/ListOfGifs/ListOfGifs'
-import TrendingSearch from '../components/TrendingSearch/TrendingSearch'
+import useGif from 'hooks/useGif'
+import SearchBox from 'components/SearchBox/SearchBox'
+import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
+import TrendingSearch from 'components/TrendingSearch/TrendingSearch'
 
 const Home = () => {
   const { gifs } = useGif()
