@@ -8,7 +8,18 @@ const SearchResults = ({ params }) => {
   const { keyword } = params
   const { loading, gifs } = useGif({ keyword })
 
-  return <>{loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}</>
+  return (
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h3 className='Home__title'>{decodeURI(keyword)}</h3>
+          <ListOfGifs gifs={gifs} />
+        </>
+      )}
+    </>
+  )
 }
 
 export default SearchResults
