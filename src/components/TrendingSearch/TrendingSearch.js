@@ -25,6 +25,7 @@ const LazyTrending = () => {
   const elRef = useRef()
 
   useEffect(() => {
+    let observer
     const onChange = (entries, observer) => {
       const el = entries[0]
       console.log(el.isIntersecting)
@@ -33,14 +34,21 @@ const LazyTrending = () => {
         observer.disconnect() //disconnect observer after view once
       }
     }
-    const observer = new IntersectionObserver(onChange, {
-      rootMargin: '100px',
+
+    Promise.resolve(
+      typeof IntersectionObserver === 'undefined'
+        ? import('intersection-observer')
+        : IntersectionObserver
+    ).then(() => {
+      observer = new IntersectionObserver(onChange, {
+        rootMargin: '100px',
+      })
+
+      observer.observe(elRef.current)
     })
 
-    observer.observe(elRef.current)
-
     // componentWillUnmount
-    return () => observer.disconnect()
+    return () => observer?.disconnect()
   })
 
   return <div ref={elRef}>{show ? <TrendingSearch /> : null}</div>

@@ -14,3 +14,4 @@ I use:
 - Responsive Design
 - baseUrl with jsconfig.json for clean imports
 - Intersection Observer API fro lazy loading
+- `npm i intersection-observer` **Polyfill** to add functionality in different kind of browsers
