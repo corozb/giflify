@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import getTrending from 'services/getTrending'
 import Category from 'components/Category/Category'
 
@@ -20,4 +20,30 @@ const TrendingSearch = () => {
   )
 }
 
-export default TrendingSearch
+const LazyTrending = () => {
+  const [show, setShow] = useState(false)
+  const elRef = useRef()
+
+  useEffect(() => {
+    const onChange = (entries, observer) => {
+      const el = entries[0]
+      console.log(el.isIntersecting)
+      if (el.isIntersecting) {
+        setShow(true)
+        observer.disconnect() //disconnect observer after view once
+      }
+    }
+    const observer = new IntersectionObserver(onChange, {
+      rootMargin: '100px',
+    })
+
+    observer.observe(elRef.current)
+
+    // componentWillUnmount
+    return () => observer.disconnect()
+  })
+
+  return <div ref={elRef}>{show ? <TrendingSearch /> : null}</div>
+}
+
+export default LazyTrending

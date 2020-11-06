@@ -4,6 +4,7 @@
   -webkit-column-gap: 0.6rem;
           column-gap: 0.6rem;
   padding: 0 3rem;
+  min-height: 100vh;
 }
 
 @media (max-width: 1200px) {

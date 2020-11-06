@@ -11,3 +11,6 @@ I use:
 - Service Layer `getData`
 - Create a custom hook `useGif`
 - Context for global state
+- Responsive Design
+- baseUrl with jsconfig.json for clean imports
+- Intersection Observer API fro lazy loading
