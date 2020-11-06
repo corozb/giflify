@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
+
 import getTrending from 'services/getTrending'
 import Category from 'components/Category/Category'
+import useInScreen from 'hooks/useInScreen'
 
 const TrendingSearch = () => {
   const [trends, setTrends] = useState([])
@@ -21,37 +23,9 @@ const TrendingSearch = () => {
 }
 
 const LazyTrending = () => {
-  const [show, setShow] = useState(false)
-  const elRef = useRef()
+  const { isInScreen, fromRef } = useInScreen({ distance: '200px' })
 
-  useEffect(() => {
-    let observer
-    const onChange = (entries, observer) => {
-      const el = entries[0]
-      console.log(el.isIntersecting)
-      if (el.isIntersecting) {
-        setShow(true)
-        observer.disconnect() //disconnect observer after view once
-      }
-    }
-
-    Promise.resolve(
-      typeof IntersectionObserver === 'undefined'
-        ? import('intersection-observer')
-        : IntersectionObserver
-    ).then(() => {
-      observer = new IntersectionObserver(onChange, {
-        rootMargin: '100px',
-      })
-
-      observer.observe(elRef.current)
-    })
-
-    // componentWillUnmount
-    return () => observer?.disconnect()
-  })
-
-  return <div ref={elRef}>{show ? <TrendingSearch /> : null}</div>
+  return <div ref={fromRef}>{isInScreen ? <TrendingSearch /> : null}</div>
 }
 
 export default LazyTrending
