@@ -8,7 +8,6 @@ const useInScreen = ({ distance = '100px' }) => {
     let observer
     const onChange = (entries, observer) => {
       const el = entries[0]
-      console.log(el.isIntersecting)
       if (el.isIntersecting) {
         setShow(true)
         observer.disconnect() //disconnect observer after view once

@@ -15,3 +15,6 @@ I use:
 - baseUrl with jsconfig.json for clean imports
 - Intersection Observer API fro lazy loading
 - `npm i intersection-observer` **Polyfill** to add functionality in different kind of browsers
+- Custom hook for Lazy Loading
+- React Lazy load and Suspense
+- React SVG Placeholder `npm i react-content-loader --save`

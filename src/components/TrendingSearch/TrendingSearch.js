@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import getTrending from 'services/getTrending'
 import Category from 'components/Category/Category'
-import useInScreen from 'hooks/useInScreen'
 
 const TrendingSearch = () => {
   const [trends, setTrends] = useState([])
@@ -15,17 +14,7 @@ const TrendingSearch = () => {
     fetchData()
   }, [])
 
-  return (
-    <div>
-      <Category name='Trending' options={trends} />
-    </div>
-  )
+  return <Category name='Trending' options={trends} />
 }
 
-const LazyTrending = () => {
-  const { isInScreen, fromRef } = useInScreen({ distance: '200px' })
-
-  return <div ref={fromRef}>{isInScreen ? <TrendingSearch /> : null}</div>
-}
-
-export default LazyTrending
+export default TrendingSearch
