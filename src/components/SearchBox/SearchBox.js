@@ -1,3 +1,4 @@
+import Button from 'components/Button/Button'
 import React, { useState } from 'react'
 import { useLocation } from 'wouter'
 
@@ -26,6 +27,7 @@ const SearchBox = () => {
           placeholder='Search all the GIFs and Stickers'
           autoFocus
         />
+        <Button />
       </form>
     </>
   )

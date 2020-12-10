@@ -1,7 +1,9 @@
 import { API_URL, API_KEY } from './settings'
 
-const getData = async (keyword, limit = 25) => {
-  const apiUrl = `${API_URL}/gifs/search?api_key=${API_KEY}=${keyword}g&limit=${limit}&offset=0&rating=g&lang=en`
+const getData = async (keyword, page = 0, limit = 5) => {
+  const apiUrl = `${API_URL}/gifs/search?api_key=${API_KEY}=${keyword}g&limit=${limit}&offset=${
+    page * limit
+  }&rating=g&lang=en`
 
   const response = await fetch(apiUrl)
   const { data = [] } = await response.json()

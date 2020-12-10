@@ -13,12 +13,14 @@ const Home = () => {
       <SearchBox />
 
       <div className='App__wrapper'>
-        <div className='App__result'>
-          <h3 className='Home__title'>Last Search</h3>
-          <ListOfGifs gifs={gifs} />
-        </div>
-        <div className='App__category'>
-          <LazyTrending />
+        <div className='App__main'>
+          <div className='App__result'>
+            <h3 className='Home__title'>Last Search</h3>
+            <ListOfGifs gifs={gifs} />
+          </div>
+          <div className='App__category'>
+            <LazyTrending />
+          </div>
         </div>
       </div>
     </>

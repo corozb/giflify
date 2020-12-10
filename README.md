@@ -17,4 +17,6 @@ I use:
 - `npm i intersection-observer` **Polyfill** to add functionality in different kind of browsers
 - Custom hook for Lazy Loading
 - React Lazy load and Suspense
-- React SVG Placeholder `npm i react-content-loader --save`
+- [React SVG Placeholder](https://github.com/danilowoz/react-content-loader)
+- Pagination
+- Grid Layout

@@ -11,16 +11,13 @@ import logo from './components/assets/giflify.png'
 
 function App() {
   return (
-    <Context.Provider
-      value={{
-        name: 'Cristian Orozco',
-        getHired: true,
-      }}
-    >
+    <Context.Provider>
       <div className='App'>
         <section className='App__content'>
           <Link to={'/'}>
-            <img src={logo} alt='Giflify logo' className='App__logo' />
+            <div className='App__logo'>
+              <img src={logo} alt='Giflify logo' />
+            </div>
           </Link>
           <ContextGifProvider>
             <Route path='/' component={Home} />

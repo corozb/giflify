@@ -6,7 +6,9 @@ import Loader from 'components/Spinner/SearchLoader'
 
 const SearchResults = ({ params }) => {
   const { keyword } = params
-  const { loading, gifs } = useGif({ keyword })
+  const { loading, gifs, setPage } = useGif({ keyword })
+
+  const handleNext = () => setPage((prevPage) => prevPage + 1)
 
   return (
     <>
@@ -18,6 +20,7 @@ const SearchResults = ({ params }) => {
           <ListOfGifs gifs={gifs} />
         </>
       )}
+      <button onClick={handleNext}>Next</button>
     </>
   )
 }
