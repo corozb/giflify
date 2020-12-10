@@ -1,16 +1,20 @@
 import { useState, useEffect, useRef } from 'react'
 
-const useInScreen = ({ distance = '100px' }) => {
+const useInScreen = ({ distance = '400px', externalRef, once = true }) => {
   const [isInScreen, setShow] = useState(false)
   const fromRef = useRef()
 
   useEffect(() => {
     let observer
+    const element = externalRef ? externalRef.current : fromRef.current // select what kind of reference we gonna use
+
     const onChange = (entries, observer) => {
       const el = entries[0]
       if (el.isIntersecting) {
         setShow(true)
-        observer.disconnect() //disconnect observer after view once
+        once && observer.disconnect() //disconnect observer after view once
+      } else {
+        !once && setShow(false)
       }
     }
 
@@ -23,7 +27,7 @@ const useInScreen = ({ distance = '100px' }) => {
         rootMargin: distance,
       })
 
-      observer.observe(fromRef.current)
+      if (element) observer.observe(element)
     })
 
     // componentWillUnmount

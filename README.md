@@ -20,3 +20,8 @@ I use:
 - [React SVG Placeholder](https://github.com/danilowoz/react-content-loader)
 - Pagination
 - Grid Layout
+- [debounce](https://github.com/angus-c/just#just-debounce-it) to call a function after last call
+  `npm install just-debounce-it`
+- useCallback: avoid a function execution with every re-render and just every time that any depencie changes in its array.
+- Infinity Scroll
+- Basic testing with React Testing Library (async)
