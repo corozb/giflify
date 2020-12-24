@@ -1,6 +1,7 @@
-import Button from 'components/Button/Button'
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { useLocation } from 'wouter'
+
+import Button from 'components/Button/Button'
 
 import './SearchBox.css'
 
@@ -33,4 +34,4 @@ const SearchBox = () => {
   )
 }
 
-export default SearchBox
+export default memo(SearchBox)

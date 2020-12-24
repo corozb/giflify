@@ -6,8 +6,8 @@ import './ListOfGifs.css'
 const ListOfGifs = ({ gifs }) => {
   return (
     <div className='gif__list'>
-      {gifs.map(({ id, title, url }) => (
-        <Gif id={id} key={id} title={title} url={url} />
+      {gifs.map(({ id, title, url, ...restOfGifs }) => (
+        <Gif id={id} key={id} title={title} url={url} extraInfo={restOfGifs} />
       ))}
     </div>
   )

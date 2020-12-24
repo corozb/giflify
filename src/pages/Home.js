@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <>
       <SearchBox />
-
       <div className='App__wrapper'>
         <div className='App__main'>
           <div className='App__result'>
