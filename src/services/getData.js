@@ -1,6 +1,6 @@
 import { API_URL, API_KEY } from './settings'
 
-const getData = async (keyword, page = 0, limit = 5) => {
+const getData = async (keyword, page = 0, limit = 15) => {
   const apiUrl = `${API_URL}/gifs/search?api_key=${API_KEY}=${keyword}g&limit=${limit}&offset=${
     page * limit
   }&rating=g&lang=en`

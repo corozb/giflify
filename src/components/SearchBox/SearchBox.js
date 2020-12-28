@@ -19,7 +19,7 @@ const SearchBox = () => {
   }
 
   return (
-    <>
+    <div className='header__form'>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -30,7 +30,7 @@ const SearchBox = () => {
         />
         <Button />
       </form>
-    </>
+    </div>
   )
 }
 

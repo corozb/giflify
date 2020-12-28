@@ -21,7 +21,6 @@ const SearchResults = ({ params }) => {
   )
 
   useEffect(() => {
-    console.log(isInScreen)
     if (isInScreen) debounceNextPage()
   }, [debounceNextPage, isInScreen])
 
@@ -30,11 +29,11 @@ const SearchResults = ({ params }) => {
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <div className='App__wrapper'>
           <h3 className='Home__title'>{decodeURI(keyword)}</h3>
           <ListOfGifs gifs={gifs} />
           <div className='visor' ref={externalRef}></div>
-        </>
+        </div>
       )}
     </>
   )

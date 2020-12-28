@@ -25,3 +25,5 @@ I use:
 - useCallback: avoid a function execution with every re-render and just every time that any depencie changes in its array.
 - Infinity Scroll
 - Basic testing with React Testing Library (async)
+- Evaluate Performance with React Developer Tools and use React.memo
+- Deploy with CLI of Vercel
