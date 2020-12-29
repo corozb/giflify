@@ -1,17 +1,13 @@
 import React from 'react'
-
 import './Spinner.css'
 
-const Spinner = () => {
+export default function Spinner() {
   return (
-    <div className='main__spinner'>
-      <div className='cursor-pointer flex justify-center items-center h-16'>
-        <div className='bouncingLoader'>
-          <div></div>
-        </div>
-      </div>
+    <div className='lds-ring'>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   )
 }
-
-export default Spinner

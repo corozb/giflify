@@ -20,12 +20,15 @@ function App() {
       <div className='App'>
         <section className='App__content'>
           <Link to={'/'}>
-            <img src={logo} alt='Giflify logo' className='App__logo' />
+            <figure className='App__logo'>
+              <img src={logo} alt='Giflify logo' />
+            </figure>
           </Link>
           <ContextGifProvider>
             <Route path='/' component={Home} />
             <Route path='/search/:keyword' component={SearchResults} />
             <Route path='/gif/:id' component={Detail} />
+            <Route path='/404' component={() => <h1>404 ERROR :(</h1>} />
           </ContextGifProvider>
         </section>
       </div>

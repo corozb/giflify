@@ -1,0 +1,55 @@
+.App__results .Category__title {
+  margin: 1rem 0 0.7rem;
+  text-align: right;
+}
+
+.App__results ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App__results ul .App__results-list {
+  padding: 0.3rem;
+  margin: 0.2rem;
+  font-size: 1.25rem;
+  color: black;
+}
+
+.App__results ul .App__results-list a {
+  color: inherit;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 1) {
+  background-color: #00ff99;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 2) {
+  background-color: #00ccff;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 3) {
+  background-color: #9933ff;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 3) a {
+  color: #fff;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 4) {
+  background-color: tomato;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 4) a {
+  color: #fff;
+}
+
+.App__results ul .App__results-list:nth-child(5n + 5) {
+  background-color: #fff35c;
+}
+/*# sourceMappingURL=Category.css.map */

@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import { useLocation } from 'wouter'
+
+import Button from 'components/Button/Button'
 
 import './SearchBox.css'
 
@@ -17,7 +19,7 @@ const SearchBox = () => {
   }
 
   return (
-    <>
+    <div className='header__form'>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -26,9 +28,10 @@ const SearchBox = () => {
           placeholder='Search all the GIFs and Stickers'
           autoFocus
         />
+        <Button />
       </form>
-    </>
+    </div>
   )
 }
 
-export default SearchBox
+export default memo(SearchBox)

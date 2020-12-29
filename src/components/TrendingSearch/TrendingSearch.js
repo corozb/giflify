@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+
 import getTrending from 'services/getTrending'
 import Category from 'components/Category/Category'
 
@@ -13,11 +14,7 @@ const TrendingSearch = () => {
     fetchData()
   }, [])
 
-  return (
-    <div>
-      <Category name='Trending' options={trends} />
-    </div>
-  )
+  return <Category name='Trending' options={trends} />
 }
 
 export default TrendingSearch

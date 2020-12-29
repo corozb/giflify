@@ -1,8 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.App__content {
+  background-color: #18061f;
+  color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  padding: 16px;
+  text-align: left;
+}
+
 .App__logo {
   margin: 10px auto;
   padding: 20px 0;
-  width: 100px;
-  cursor: pointer;
+  width: 144px;
 }
 
 .App__logo img {
@@ -12,42 +31,13 @@
 }
 
 .App__wrapper {
-  width: 98%;
+  width: 100%;
+  max-width: 90rem;
   margin: 0 auto;
   padding: 0 0.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: initial;
-  -webkit-box-direction: initial;
-      -ms-flex-direction: initial;
-          flex-direction: initial;
 }
 
-.App__wrapper .gif__list {
-  width: 72vw;
-  -webkit-column-count: 3;
-          column-count: 3;
-}
-
-@media (max-width: 992px) {
-  .App__wrapper .gif__list {
-    -webkit-column-count: 2;
-            column-count: 2;
-    width: 88vw;
-  }
-}
-
-@media (max-width: 768px) {
-  .App__wrapper .gif__list {
-    -webkit-column-count: 1;
-            column-count: 1;
-  }
-}
-
-.App__content {
-  background-color: #010308;
-  min-height: 100vh;
+.App__main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,22 +45,41 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.App__result {
+  -ms-flex-negative: 2;
+      flex-shrink: 2;
+  width: 100%;
+}
+
+.App__category {
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 .App .Home__title {
-  color: #f7d8fa;
-  padding: 2rem 0 1rem 3rem;
+  color: #f3f3f3;
+  margin: 0.8rem 0 2.2rem 0;
 }
 
-.App h1 {
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .App .Home__title {
-    padding-left: 2rem;
+/*----------*/
+@media screen and (min-width: 55rem) {
+  .App__main {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+  }
+  .App__category {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    width: 40%;
+    max-width: 300px;
   }
 }
 /*# sourceMappingURL=App.css.map */

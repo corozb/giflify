@@ -1,15 +1,41 @@
 import React from 'react'
+import { Redirect } from 'wouter'
+import { Helmet } from 'react-helmet'
 
 import Gif from 'components/Gif/Gif'
-import useGlobalGifs from 'hooks/useGlobalGifs'
+import useSingleGif from 'hooks/useSingleGif'
+import Spinner from 'components/Spinner/Spinner'
+import useSEO from 'hooks/useSEO'
 
 const Detail = ({ params }) => {
   const { id } = params
-  const gifs = useGlobalGifs()
+  const { gif, isLoading, isError } = useSingleGif(id)
 
-  const gif = gifs.find((singleGif) => singleGif.id === id)
+  const title = gif ? gif.title : ''
+  useSEO({ description: `Detail of ${title}`, title })
 
-  return <Gif {...gif} />
+  if (isLoading) {
+    return (
+      <>
+        <Helmet>
+          <title>Loading...</title>
+        </Helmet>
+        <Spinner />
+      </>
+    )
+  }
+  if (isError) return <Redirect to='/404' />
+  if (!gif) return null
+
+  return (
+    <>
+      <Helmet>
+        <title>{title} || Giflify</title>
+      </Helmet>
+      <h3 className='App-title'>{gif.title}</h3>
+      <Gif {...gif} />
+    </>
+  )
 }
 
 export default Detail

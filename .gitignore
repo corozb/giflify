@@ -26,3 +26,5 @@ yarn-error.log*
 *.scss
 *.map
 *.min.css
+
+.vercel
