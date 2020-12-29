@@ -1,0 +1,137 @@
+.gif {
+  margin-bottom: 0;
+  position: relative;
+  height: 100%;
+}
+
+.gif img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  vertical-align: top;
+}
+
+.gif__link {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gif h4 {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
+  position: absolute;
+}
+
+.gif i {
+  font-size: 80px;
+}
+
+.gif__link img {
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gif:nth-child(5n + 1) img {
+  background-color: #00ff99;
+}
+
+.gif:nth-child(5n + 1):hover {
+  -webkit-box-shadow: 0 0 0 6px #00ff99;
+          box-shadow: 0 0 0 6px #00ff99;
+}
+
+.gif:nth-child(5n + 1):hover h4 {
+  background-color: #00ff99;
+  color: #000;
+}
+
+.gif:nth-child(5n + 2) img {
+  background-color: #00ccff;
+}
+
+.gif:nth-child(5n + 2):hover {
+  -webkit-box-shadow: 0 0 0 6px #00ccff;
+          box-shadow: 0 0 0 6px #00ccff;
+}
+
+.gif:nth-child(5n + 2):hover h4 {
+  background-color: #00ccff;
+  color: #000;
+}
+
+.gif:nth-child(5n + 3) img {
+  background-color: #9933ff;
+}
+
+.gif:nth-child(5n + 3):hover {
+  -webkit-box-shadow: 0 0 0 6px #9933ff;
+          box-shadow: 0 0 0 6px #9933ff;
+}
+
+.gif:nth-child(5n + 3):hover h4 {
+  background-color: #9933ff;
+  color: #fff;
+}
+
+.gif:nth-child(5n + 4) img {
+  background-color: tomato;
+}
+
+.gif:nth-child(5n + 4):hover {
+  -webkit-box-shadow: 0 0 0 6px tomato;
+          box-shadow: 0 0 0 6px tomato;
+}
+
+.gif:nth-child(5n + 4):hover h4 {
+  background-color: tomato;
+  color: #fff;
+}
+
+.gif:nth-child(5n + 5) img {
+  background-color: #fff35c;
+}
+
+.gif:nth-child(5n + 5):hover {
+  -webkit-box-shadow: 0 0 0 6px #fff35c;
+          box-shadow: 0 0 0 6px #fff35c;
+}
+
+.gif:nth-child(5n + 5):hover h4 {
+  background-color: #fff35c;
+  color: #000;
+}
+
+.gif:nth-child(11n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gif:nth-child(8n + 1) {
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.gif:nth-child(10n + 3) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+@media screen and (max-width: 45rem) {
+  .gif .gif:nth-child(11n + 1),
+  .gif .gif:nth-child(8n + 1),
+  .gif .gif:nth-child(10n + 3) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+/*# sourceMappingURL=Gif.css.map */
