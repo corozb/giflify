@@ -5,14 +5,12 @@ import { Helmet } from 'react-helmet'
 import Gif from 'components/Gif/Gif'
 import useSingleGif from 'hooks/useSingleGif'
 import Spinner from 'components/Spinner/Spinner'
-import useSEO from 'hooks/useSEO'
 
 const Detail = ({ params }) => {
   const { id } = params
   const { gif, isLoading, isError } = useSingleGif(id)
 
   const title = gif ? gif.title : ''
-  useSEO({ description: `Detail of ${title}`, title })
 
   if (isLoading) {
     return (
