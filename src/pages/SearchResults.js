@@ -5,6 +5,7 @@ import useGif from '../hooks/useGif'
 import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
 import Loader from 'components/Spinner/SearchLoader'
 import useInScreen from 'hooks/useInScreen'
+import useSEO from 'hooks/useSEO'
 
 const SearchResults = ({ params }) => {
   const { keyword } = params
@@ -14,6 +15,14 @@ const SearchResults = ({ params }) => {
     externalRef: loading ? null : externalRef,
     once: false,
   })
+
+  const title = gifs
+    ? `${gifs.length} results of ${keyword}`
+    : loading
+    ? 'Loading...'
+    : ''
+
+  useSEO({ title })
 
   const debounceNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 200),
