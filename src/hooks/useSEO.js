@@ -12,7 +12,9 @@ export default function useSEO({ description, title }) {
     if (title) {
       document.title = `${title} | Giflify`
     }
-    return () => (document.title = previousTitle)
+    return () => {
+      document.title = previousTitle
+    }
   }, [title])
 
   useEffect(() => {
