@@ -27,3 +27,5 @@ I use:
 - Basic testing with React Testing Library (async)
 - Evaluate Performance with React Developer Tools and use React.memo
 - Deploy with CLI of Vercel
+- Custom Hooks to manage the SEO in title and description metadata
+- [React Helmet](https://www.npmjs.com/package/react-helmet) `npm i react-helmet`: Is a reusable component to manage all changes in document head

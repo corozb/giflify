@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 import useGif from 'hooks/useGif'
 import SearchBox from 'components/SearchBox/SearchBox'
@@ -10,6 +11,9 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Home | Giflify</title>
+      </Helmet>
       <SearchBox />
       <div className='App__wrapper'>
         <div className='App__main'>

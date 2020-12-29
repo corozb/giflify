@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useCallback } from 'react'
 import debounce from 'just-debounce-it'
+import { Helmet } from 'react-helmet'
 
 import useGif from '../hooks/useGif'
 import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
 import Loader from 'components/Spinner/SearchLoader'
 import useInScreen from 'hooks/useInScreen'
-import useSEO from 'hooks/useSEO'
 
 const SearchResults = ({ params }) => {
   const { keyword } = params
@@ -22,8 +22,6 @@ const SearchResults = ({ params }) => {
     ? 'Loading...'
     : ''
 
-  useSEO({ title })
-
   const debounceNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 200),
     [setPage]
@@ -38,11 +36,17 @@ const SearchResults = ({ params }) => {
       {loading ? (
         <Loader />
       ) : (
-        <div className='App__wrapper'>
-          <h3 className='Home__title'>{decodeURI(keyword)}</h3>
-          <ListOfGifs gifs={gifs} />
-          <div className='visor' ref={externalRef}></div>
-        </div>
+        <>
+          <Helmet>
+            <title>{title}</title>
+            <meta name='description' content={title} />
+          </Helmet>
+          <div className='App__wrapper'>
+            <h3 className='Home__title'>{decodeURI(keyword)}</h3>
+            <ListOfGifs gifs={gifs} />
+            <div className='visor' ref={externalRef}></div>
+          </div>
+        </>
       )}
     </>
   )
