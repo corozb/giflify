@@ -13,6 +13,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Home | Giflify</title>
+        <link rel='canonical' href='https://giflify.vercel.app/' />
       </Helmet>
       <SearchBox />
       <div className='App__wrapper'>

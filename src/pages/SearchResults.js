@@ -6,10 +6,11 @@ import useGif from '../hooks/useGif'
 import ListOfGifs from 'components/ListOfGifs/ListOfGifs'
 import Loader from 'components/Spinner/SearchLoader'
 import useInScreen from 'hooks/useInScreen'
+import SearchBox from 'components/SearchBox/SearchBox'
 
 const SearchResults = ({ params }) => {
-  const { keyword } = params
-  const { loading, gifs, setPage } = useGif({ keyword })
+  const { keyword, rating = 'g' } = params
+  const { loading, gifs, setPage } = useGif({ keyword, rating })
   const externalRef = useRef()
   const { isInScreen } = useInScreen({
     externalRef: loading ? null : externalRef,
@@ -41,6 +42,7 @@ const SearchResults = ({ params }) => {
             <title>{title}</title>
             <meta name='description' content={title} />
           </Helmet>
+          <SearchBox initialKeyword={keyword} initialRating={rating} />
           <div className='App__wrapper'>
             <h3 className='Home__title'>{decodeURI(keyword)}</h3>
             <ListOfGifs gifs={gifs} />
