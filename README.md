@@ -29,3 +29,5 @@ I use:
 - Deploy with CLI of Vercel
 - Custom Hooks to manage the SEO in title and description metadata
 - [React Helmet](https://www.npmjs.com/package/react-helmet) `npm i react-helmet`: Is a reusable component to manage all changes in document head
+- useReducer to manage state
+- Create a custom hook (useForm) to manage state
